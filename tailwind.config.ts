@@ -19,10 +19,6 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				'playfair': ['Playfair Display', 'serif'],
-				'inter': ['Inter', 'sans-serif'],
-			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -57,35 +53,29 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				party: {
-					50: '#fdf2f8',
-					100: '#fce7f3',
-					200: '#fbcfe8',
-					300: '#f9a8d4',
-					400: '#f472b6',
-					500: '#ec4899',
-					600: '#db2777',
-					700: '#be185d',
-					800: '#9d174d',
-					900: '#831843',
+				sidebar: {
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))'
 				},
-				festive: {
-					50: '#fff7ed',
-					100: '#ffedd5',
-					200: '#fed7aa',
-					300: '#fdba74',
-					400: '#fb923c',
-					500: '#f97316',
-					600: '#ea580c',
-					700: '#c2410c',
-					800: '#9a3412',
-					900: '#7c2d12',
+				// Updated Joris colors - more vibrant and happy
+				joris: {
+					teal: '#004957',      // Deep Teal (primary text) - kept same
+					orange: '#FF8C42',    // More vibrant orange (was #F5AB41)
+					yellow: '#FFD23F',    // Brighter yellow (was #F5D649)
+					cream: '#FDF5EC',     // Soft Cream (light background) - kept same
+					midnight: '#012E36',  // Midnight Teal (dark backdrop) - kept same
+					// New happy colors
+					pink: '#FF6B9D',      // Happy pink
+					green: '#4ECDC4',     // Playful teal-green
+					purple: '#A8E6CF',    // Soft mint green
+					coral: '#FFB347',     // Warm coral
 				}
-			},
-			backgroundImage: {
-				'party-gradient': 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
-				'festive-gradient': 'linear-gradient(135deg, #f97316 0%, #eab308 100%)',
-				'hero-gradient': 'linear-gradient(135deg, #ec4899 0%, #f97316 50%, #eab308 100%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -108,40 +98,14 @@ export default {
 					to: {
 						height: '0'
 					}
-				},
-				'fade-in': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(20px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0)'
-					}
-				},
-				'float': {
-					'0%, 100%': {
-						transform: 'translateY(0px)'
-					},
-					'50%': {
-						transform: 'translateY(-10px)'
-					}
-				},
-				'pulse-glow': {
-					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(236, 72, 153, 0.4)'
-					},
-					'50%': {
-						boxShadow: '0 0 30px rgba(236, 72, 153, 0.8)'
-					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'float': 'float 3s ease-in-out infinite',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			fontFamily: {
+				poppins: ['Poppins', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Arial', 'sans-serif'],
 			}
 		}
 	},

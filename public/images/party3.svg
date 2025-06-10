@@ -1,0 +1,8 @@
+
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#F5D649"/>
+  <text x="400" y="225" font-family="Arial" font-size="30" text-anchor="middle" fill="#419577">Teambuilding Weekend</text>
+  <rect x="200" y="100" width="100" height="100" fill="#F5AB41"/>
+  <rect x="500" y="100" width="100" height="100" fill="#F5AB41"/>
+  <path d="M200,350 L600,350" stroke="#419577" stroke-width="10" fill="none"/>
+</svg>

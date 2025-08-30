@@ -43,7 +43,7 @@ const WatIkDoeSection = () => {
             </div>
             
             {/* Bottom highlight */}
-            <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+            <div className="mt-8 text-center">
               <p className="text-xl font-semibold text-joris-teal">
                 Gewoon goed georganiseerd!
               </p>

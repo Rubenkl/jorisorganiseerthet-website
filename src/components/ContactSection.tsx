@@ -91,7 +91,7 @@ const ContactSection = () => {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-joris-teal mb-4">
-            Heb je een vraag, een gek idee of wil je gewoon even sparren? 🤔💭
+            Heb je een vraag, een gek idee of wil je gewoon even sparren?
           </h2>
           <p className="text-xl text-joris-teal font-medium">
             Bel mij gerust of stuur een appje of mailtje! 📞💬✉️
@@ -112,7 +112,7 @@ const ContactSection = () => {
                 className="flex items-center justify-center gap-3 bg-green-500 text-white py-4 px-6 rounded-xl hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg font-bold"
               >
                 <MessageSquare size={24} />
-                WhatsApp mij! 💬
+                WhatsApp mij
               </a>
               
               <a
@@ -120,7 +120,7 @@ const ContactSection = () => {
                 className="flex items-center justify-center gap-3 bg-joris-orange text-white py-4 px-6 rounded-xl hover:bg-joris-yellow hover:text-joris-teal transition-all transform hover:scale-105 shadow-lg font-bold"
               >
                 <Phone size={24} />
-                Direct bellen! 📞
+                Bel mij
               </a>
               
               <a
@@ -128,14 +128,14 @@ const ContactSection = () => {
                 className="flex items-center justify-center gap-3 bg-joris-yellow text-joris-teal py-4 px-6 rounded-xl hover:bg-white transition-all transform hover:scale-105 shadow-lg font-bold"
               >
                 <Mail size={24} />
-                Mail mij! ✉️
+                Mail mij
               </a>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-3xl shadow-xl border-l-8 border-joris-orange">
-            <h3 className="text-2xl font-bold mb-6 text-joris-teal text-center">Stuur een bericht 💌</h3>
+            <h3 className="text-2xl font-bold mb-6 text-joris-teal text-center">Stuur een bericht</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -198,7 +198,7 @@ const ContactSection = () => {
                 disabled={isSubmitting}
                 className="w-full bg-joris-orange text-white py-4 px-6 rounded-xl font-bold text-lg hover:bg-joris-yellow hover:text-joris-teal transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                {isSubmitting ? 'Bezig met verzenden... ⏳' : 'Verstuur bericht! 🚀'}
+                {isSubmitting ? 'Bezig met verzenden... ⏳' : 'Verstuur bericht!'}
               </button>
             </form>
           </div>

@@ -25,9 +25,9 @@ const PortfolioSection = () => {
   return (
     <section id="portfolio" className="section-padding bg-white">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-semibold text-joris-teal mb-4 text-center">Impressie</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold text-joris-teal mb-4 text-center">Pakketten</h2>
         <p className="text-lg text-center max-w-3xl mx-auto mb-12">
-          Bekijk enkele van de succesvolle evenementen die ik heb georganiseerd voor tevreden klanten
+          Kies uit deze vier verschillende pakketten, of laat mij iets helemaal op maat maken voor jullie groep
         </p>
         
         <div className="grid md:grid-cols-2 gap-8">

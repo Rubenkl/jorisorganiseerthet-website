@@ -18,7 +18,7 @@ const FooterSection = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="#hero" className="hover:text-joris-orange transition-colors">Home</a></li>
               <li><a href="#wat-ik-doe" className="hover:text-joris-orange transition-colors">Wat ik doe!</a></li>
-              <li><a href="#portfolio" className="hover:text-joris-orange transition-colors">Impressie</a></li>
+              <li><a href="#portfolio" className="hover:text-joris-orange transition-colors">Pakketten</a></li>
               <li><a href="#testimonials" className="hover:text-joris-orange transition-colors">Reviews</a></li>
               <li><a href="#contact" className="hover:text-joris-orange transition-colors">Contact</a></li>
             </ul>
@@ -35,7 +35,7 @@ const FooterSection = () => {
         </div>
         
         <div className="border-t border-joris-teal/30 mt-8 pt-8 text-center text-sm opacity-60">
-          <p>&copy; 2024 Joris Organiseert Het. Alle rechten voorbehouden.</p>
+          <p>&copy; {new Date().getFullYear()} Joris Organiseert Het. Alle rechten voorbehouden.</p>
         </div>
       </div>
     </footer>

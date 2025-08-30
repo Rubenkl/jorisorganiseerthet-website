@@ -9,7 +9,7 @@ const FooterSection = () => {
           <div>
             <img src="/images/joris-logo.png" alt="Joris Organiseert Het" className="h-12 mb-4" />
             <p className="text-sm opacity-80">
-              Geen poespas, gewoon een onmeunig mooie dag. Alles op maat voor vriendenfeesten, vrijgezellenfeesten en familie-uitjes.
+              Geen poespas, gewoon een onmeunig mooie dag. Alles op maat voor vriendenfeesten, vrijgezellenfeesten, familie-uitjes, bedrijfsuitjes en alle andere groepen die samen iets leuks willen beleven.
             </p>
           </div>
           

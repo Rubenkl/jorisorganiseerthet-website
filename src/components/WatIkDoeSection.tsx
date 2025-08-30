@@ -27,14 +27,14 @@ const WatIkDoeSection = () => {
             {/* Personal story */}
             <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
               <p>
-                Ik regel graag dingen. Plannen, organiseren, zorgen dat alles soepel loopt – daar word ik blij van. 
+                Ik regel graag dingen. Plannen, organiseren, zorgen dat alles soepel loopt, daar word ik blij van. 
                 Voor families, vriendengroepen, sportteams, collega's en alle andere gezellige clubjes die samen iets leuks willen beleven.
                 Of het nu gaat om een dagje uit, een feestavond of een vrijgezellenfeest dat nog lang wordt besproken aan een dag of avond om nooit te vergeten. 
                 Geen stress en geen geregel.
               </p>
               
               <p>
-                Want eerlijk is eerlijk: mensen vinden het heerlijk als alles geregeld is. Geen gezeur over "Wat gaan we nu doen?" of "Waar kunnen we eigenlijk heen?" – ik regel het. Van A tot Z. Geen poespas, gewoon een onmeunig mooie dag. Alles op maat.
+                Want eerlijk is eerlijk: mensen vinden het heerlijk als alles geregeld is. Geen gezeur over "Wat gaan we nu doen?" of "Waar kunnen we eigenlijk heen?" want ik regel het. Van A tot Z. Geen poespas, gewoon een onmeunig mooie dag. Alles op maat.
               </p>
               
               <p>

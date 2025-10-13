@@ -20,7 +20,7 @@ const WatIkDoeSection = () => {
                 Hoi! Ik ben Joris Lansink
               </h2>
               <p className="text-joris-orange font-medium text-lg">
-                28 jaar • Albergen • Regelt Het van A tot Z
+                Regelt Het van A tot Z
               </p>
             </div>
             

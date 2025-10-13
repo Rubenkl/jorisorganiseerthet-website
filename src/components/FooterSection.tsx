@@ -35,7 +35,7 @@ const FooterSection = () => {
         </div>
         
         <div className="border-t border-joris-teal/30 mt-8 pt-8 text-center text-sm opacity-60">
-          <p>&copy; {new Date().getFullYear()} Joris Organiseert Het. Alle rechten voorbehouden.</p>
+          <p>&copy; {new Date().getFullYear()} Joris Organiseert Het. Alle rechten voorbehouden. Website door <a href="https://ruub.eu" target="_blank" rel="noopener noreferrer" className="hover:text-joris-orange transition-colors">RUUB</a>.</p>
         </div>
       </div>
     </footer>

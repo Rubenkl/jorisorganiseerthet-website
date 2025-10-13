@@ -13,7 +13,7 @@ const WatIkDoeSection = () => {
                 <img 
                   src="/images/tinified-foto-joris-2.png" 
                   alt="Foto van Joris Lansink" 
-                  className="w-32 h-32 mx-auto"
+                  className="w-48 h-48 mx-auto"
                 />
               </div>
               

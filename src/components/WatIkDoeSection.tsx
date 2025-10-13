@@ -9,11 +9,11 @@ const WatIkDoeSection = () => {
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
             {/* Header with circular photo and intro */}
             <div className="text-center mb-8">
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-joris-teal/20">
+              <div className="mx-auto mb-6">
                 <img 
                   src="/images/tinified-foto-joris.png" 
                   alt="Foto van Joris Lansink" 
-                  className="w-full h-full object-cover"
+                  className="w-32 h-32 mx-auto"
                 />
               </div>
               

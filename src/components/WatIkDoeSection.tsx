@@ -11,7 +11,7 @@ const WatIkDoeSection = () => {
             <div className="text-center mb-8">
               <div className="mx-auto mb-6">
                 <img 
-                  src="/images/tinified-foto-joris.png" 
+                  src="/images/tinified-foto-joris-2.png" 
                   alt="Foto van Joris Lansink" 
                   className="w-32 h-32 mx-auto"
                 />

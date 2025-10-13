@@ -49,21 +49,20 @@ const PortfolioSection = () => {
         
         {/* Images section */}
         <div className="mt-16">
-          <h3 className="text-2xl md:text-3xl font-semibold text-joris-teal mb-8 text-center">
-            Impressies van Georganiseerde Festiviteiten
-          </h3>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-100 rounded-lg overflow-hidden aspect-video flex items-center justify-center">
-              <div className="text-center text-gray-400">
-                <p className="text-lg">📸 Foto placeholder 1</p>
-                <p className="text-sm mt-2">Afbeelding van georganiseerde festiviteit</p>
-              </div>
+            <div className="rounded-lg overflow-hidden">
+              <img 
+                src="/images/tinified-image00007.png" 
+                alt="Georganiseerde festiviteit" 
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="bg-gray-100 rounded-lg overflow-hidden aspect-video flex items-center justify-center">
-              <div className="text-center text-gray-400">
-                <p className="text-lg">📸 Foto placeholder 2</p>
-                <p className="text-sm mt-2">Afbeelding van georganiseerde festiviteit</p>
-              </div>
+            <div className="rounded-lg overflow-hidden">
+              <img 
+                src="/images/tinified-image00016.png" 
+                alt="Georganiseerde festiviteit" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

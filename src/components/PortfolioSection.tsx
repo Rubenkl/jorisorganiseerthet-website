@@ -21,7 +21,7 @@ const PortfolioSection = () => {
     },
     {
       title: "⭐ Dag op maat: Joris' favoriet",
-      description: "Hou je van verrassingen? Mooi! Dan regel ik een dag waarvan zelfs ik pas op het moment zelf weet wat het wordt. Helemaal op maat gemaakt, zonder dat je er zelf druk om hoeft te maken.",
+      description: "Zin in iets onverwachts? Perfect. Ik plan een dag voor je waarbij zelfs ik pas op het moment zelf weet wat er gaat gebeuren. Alles afgestemd op jou, zonder dat jij ergens aan hoeft te denken.",
       isHighlighted: true
     }
   ];

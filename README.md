@@ -63,62 +63,6 @@ The website focuses on private events:
 - **Homepage Background**: summer-bbq.png - A vibrant summer BBQ scene with string lights
 - **Logo**: joris-logo.png - The official Joris Organiseert Het logo
 
-## How to Add a New Portfolio Item
-
-To add a new portfolio item to the existing portfolio section:
-
-1. Open `src/components/PortfolioSection.tsx`
-2. Find the `portfolioItems` array
-3. Add a new object to the array with the following structure:
-```js
-{
-  title: "Your New Portfolio Item Title",
-  description: "Description of the event or service provided",
-  image: "/images/your-new-image.jpg" // Make sure to add the image to the images folder
-}
-```
-
-## How to Create a Dedicated Portfolio Page
-
-If you want to create a dedicated page for portfolio items with more details:
-
-1. Create a new file in `src/pages/Portfolio.tsx`
-2. Import the necessary components and create a portfolio page layout
-3. Add the route to `src/App.tsx` by adding a new `<Route>` element
-4. Add navigation links to the new page in the Navbar component
-
-Example Portfolio page implementation:
-
-```jsx
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import FooterSection from '@/components/FooterSection';
-import FloatingButtons from '@/components/FloatingButtons';
-
-const Portfolio = () => {
-  // Portfolio items with more details
-  const detailedPortfolioItems = [
-    // Add detailed portfolio items here
-  ];
-
-  return (
-    <div className="min-h-screen">
-      <Navbar />
-      <section className="pt-32 pb-16 bg-joris-cream">
-        <div className="container">
-          <h1 className="text-3xl md:text-4xl font-semibold text-joris-teal mb-8">Portfolio</h1>
-          {/* Portfolio items layout */}
-        </div>
-      </section>
-      <FooterSection />
-      <FloatingButtons />
-    </div>
-  );
-};
-
-export default Portfolio;
-```
-
 ## Project URL
 
 **URL**: https://lovable.dev/projects/ca0e7222-0ac3-41a0-a788-08bbed4dba6b
@@ -140,6 +84,50 @@ npm i
 # Start the development server
 npm run dev
 ```
+
+## GitHub Pages Compatibility & Deployment
+
+This project is configured to be deployed as a static single-page application on GitHub Pages. The following adjustments ensure smooth hosting:
+
+- **Base path awareness** – `vite.config.ts`, the React router, and every static image reference rely on `import.meta.env.BASE_URL`. During local development and custom-domain deployments the base defaults to `/`. When hosting from the repository sub-path (e.g. `https://<user>.github.io/joris-party-planner-online/`), set the `VITE_BASE_PATH` environment variable to `/joris-party-planner-online/` so compiled assets include the correct prefix.
+- **Static asset paths** – All components now build their image URLs from `import.meta.env.BASE_URL`, so assets resolve correctly whether the site is hosted at the root domain or under a repository sub-path.
+- **SPA fallback page** – After every build a `404.html` copy of the generated `index.html` is created automatically (see `scripts/create-404.js`). GitHub Pages serves this file for unknown routes, allowing React Router to hydrate the correct view.
+- **Automatic deployment** – The workflow defined in `.github/workflows/deploy.yml` builds the project, sets the `VITE_BASE_PATH` from the repository variable `VITE_BASE_PATH` (falling back to `/` when the variable is not provided), uploads the `dist` folder as an artifact, and publishes it with `actions/deploy-pages`.
+
+### Triggering a Deployment
+
+1. Push to the `main` branch (or trigger the workflow manually via the GitHub UI).
+2. GitHub Actions will execute the **Deploy static site to GitHub Pages** workflow.
+3. The workflow runs `npm ci`, `npm run build`, copies `dist/index.html` to `dist/404.html`, and publishes the result to the GitHub Pages environment.
+4. Once the workflow succeeds, GitHub Pages serves the site from `https://<your-username>.github.io/joris-party-planner-online/` by default.
+
+> **Hosting tip:** Leave the `VITE_BASE_PATH` repository variable unset (or set it explicitly to `/`) for custom domains or any deployment that serves from the root. If you host from the repository sub-path, set the variable to `/joris-party-planner-online/` so the deployment workflow builds with the matching asset prefix.
+
+### Manual Build & Preview
+
+```sh
+# Build for a GitHub Pages repository site (served from https://<user>.github.io/joris-party-planner-online/)
+VITE_BASE_PATH=/joris-party-planner-online/ npm run build
+
+# Serve the production build locally
+npm run preview
+
+# Build for a custom domain (root deployment)
+npm run build
+```
+
+### Troubleshooting blank pages after deployment
+
+If the deployed site shows a blank page and the compiled `index.html` contains script tags that start with `/joris-party-planner-online/`, it means the build used the repository sub-path while the site is being served from the root (for example, via a custom domain). Rebuild with `npm run build` (or explicitly set `VITE_BASE_PATH=/`) to generate root-relative asset URLs, or clear the `VITE_BASE_PATH` repository variable so the GitHub Actions workflow builds with the correct base path. Conversely, if assets fail to load when hosting at the repository sub-path, set `VITE_BASE_PATH=/joris-party-planner-online/` locally and in the repository variables before rebuilding.
+
+## Updating the Portfolio Section
+
+`src/components/PortfolioSection.tsx` exposes two data structures:
+
+- `packageItems` – the list of arrangement cards rendered at the top of the section. Add, remove, or edit objects in this array to change the textual content.
+- `activityImages` – an array with the image filenames displayed beneath the packages. Add more entries that point to files in `public/images/` using the pattern ```${import.meta.env.BASE_URL}images/<your-image>```.
+
+When adding new images, place the optimized files in `public/images/` to keep deployment simple.
 
 ## Technologies Used
 

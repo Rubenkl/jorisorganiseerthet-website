@@ -2,6 +2,12 @@
 import React from 'react';
 
 const PortfolioSection = () => {
+  const basePath = import.meta.env.BASE_URL;
+  const activityImages = [
+    `${basePath}images/tinified-image00007.png`,
+    `${basePath}images/tinified-image00016.png`,
+  ];
+
   // Package options
   const packageItems = [
     {
@@ -50,20 +56,15 @@ const PortfolioSection = () => {
         {/* Images section */}
         <div className="mt-16">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-lg overflow-hidden">
-              <img 
-                src="/images/tinified-image00007.png" 
-                alt="Georganiseerde festiviteit" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden">
-              <img 
-                src="/images/tinified-image00016.png" 
-                alt="Georganiseerde festiviteit" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {activityImages.map((src) => (
+              <div key={src} className="rounded-lg overflow-hidden">
+                <img
+                  src={src}
+                  alt="Georganiseerde festiviteit"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
         

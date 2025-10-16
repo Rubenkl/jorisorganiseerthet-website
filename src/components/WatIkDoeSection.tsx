@@ -2,6 +2,9 @@
 import React from 'react';
 
 const WatIkDoeSection = () => {
+  const basePath = import.meta.env.BASE_URL;
+  const portraitSrc = `${basePath}images/tinified-foto-joris-2.png`;
+
   return (
     <section id="wat-ik-doe" className="section-padding bg-joris-cream">
       <div className="container">
@@ -10,9 +13,9 @@ const WatIkDoeSection = () => {
             {/* Header with circular photo and intro */}
             <div className="text-center mb-8">
               <div className="mx-auto mb-6">
-                <img 
-                  src="/images/tinified-foto-joris-2.png" 
-                  alt="Foto van Joris Lansink" 
+                <img
+                  src={portraitSrc}
+                  alt="Foto van Joris Lansink"
                   className="w-48 h-48 mx-auto"
                 />
               </div>

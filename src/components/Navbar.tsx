@@ -27,6 +27,9 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
+  const basePath = import.meta.env.BASE_URL;
+  const logoSrc = `${basePath}images/joris-logo.png`;
+
   return (
     <nav className={cn(
       "fixed w-full z-20 transition-all duration-300",
@@ -34,9 +37,9 @@ const Navbar = () => {
     )}>
       <div className="container mx-auto flex justify-between items-center">
         <a href="#hero" className="flex items-center">
-          <img 
-            src="/images/joris-logo.png" 
-            alt="Joris Organiseert Het!" 
+          <img
+            src={logoSrc}
+            alt="Joris Organiseert Het!"
             className={cn(
               "transition-all duration-300",
               isScrolled ? "h-14" : "h-16 md:h-20"

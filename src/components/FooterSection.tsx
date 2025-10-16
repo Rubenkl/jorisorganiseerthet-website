@@ -2,12 +2,15 @@
 import React from 'react';
 
 const FooterSection = () => {
+  const basePath = import.meta.env.BASE_URL;
+  const logoSrc = `${basePath}images/joris-logo.png`;
+
   return (
     <footer className="bg-joris-midnight text-joris-cream py-12">
       <div className="container">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <img src="/images/joris-logo.png" alt="Joris Organiseert Het" className="h-12 mb-4" />
+            <img src={logoSrc} alt="Joris Organiseert Het" className="h-12 mb-4" />
             <p className="text-sm opacity-80">
               Geen poespas, gewoon een onmeunig mooie dag. Alles op maat voor vriendenfeesten, vrijgezellenfeesten, familie-uitjes, bedrijfsuitjes en alle andere groepen die samen iets leuks willen beleven.
             </p>

@@ -89,10 +89,10 @@ npm run dev
 
 This project is configured to be deployed as a static single-page application on GitHub Pages. The following adjustments ensure smooth hosting:
 
-- **Base path awareness** – `vite.config.ts`, the React router, and every static image reference rely on `import.meta.env.BASE_URL`. During local development and custom-domain deployments the base defaults to `/`. When hosting from the repository sub-path (e.g. `https://<user>.github.io/joris-party-planner-online/`), set the `VITE_BASE_PATH` environment variable to `/joris-party-planner-online/` so compiled assets include the correct prefix.
+- **Base path awareness** – `vite.config.ts`, the React router, and every static image reference rely on `import.meta.env.BASE_URL`. During local development the base is `/`, while production builds default to `/joris-party-planner-online/`. You can override the production base by setting the `VITE_BASE_PATH` environment variable when building.
 - **Static asset paths** – All components now build their image URLs from `import.meta.env.BASE_URL`, so assets resolve correctly whether the site is hosted at the root domain or under a repository sub-path.
 - **SPA fallback page** – After every build a `404.html` copy of the generated `index.html` is created automatically (see `scripts/create-404.js`). GitHub Pages serves this file for unknown routes, allowing React Router to hydrate the correct view.
-- **Automatic deployment** – The workflow defined in `.github/workflows/deploy.yml` builds the project, sets the `VITE_BASE_PATH` from the repository variable `VITE_BASE_PATH` (falling back to `/` when the variable is not provided), uploads the `dist` folder as an artifact, and publishes it with `actions/deploy-pages`.
+- **Automatic deployment** – The workflow defined in `.github/workflows/deploy.yml` builds the project, sets the correct base path using the repository name, uploads the `dist` folder as an artifact, and publishes it with `actions/deploy-pages`.
 
 ### Triggering a Deployment
 
@@ -101,24 +101,18 @@ This project is configured to be deployed as a static single-page application on
 3. The workflow runs `npm ci`, `npm run build`, copies `dist/index.html` to `dist/404.html`, and publishes the result to the GitHub Pages environment.
 4. Once the workflow succeeds, GitHub Pages serves the site from `https://<your-username>.github.io/joris-party-planner-online/` by default.
 
-> **Hosting tip:** Leave the `VITE_BASE_PATH` repository variable unset (or set it explicitly to `/`) for custom domains or any deployment that serves from the root. If you host from the repository sub-path, set the variable to `/joris-party-planner-online/` so the deployment workflow builds with the matching asset prefix.
-
 ### Manual Build & Preview
 
 ```sh
-# Build for a GitHub Pages repository site (served from https://<user>.github.io/joris-party-planner-online/)
-VITE_BASE_PATH=/joris-party-planner-online/ npm run build
+# Build with the default GitHub Pages base path
+npm run build
 
 # Serve the production build locally
 npm run preview
 
-# Build for a custom domain (root deployment)
-npm run build
+# Build for a custom base path (e.g. custom domain)
+VITE_BASE_PATH=/ npm run build
 ```
-
-### Troubleshooting blank pages after deployment
-
-If the deployed site shows a blank page and the compiled `index.html` contains script tags that start with `/joris-party-planner-online/`, it means the build used the repository sub-path while the site is being served from the root (for example, via a custom domain). Rebuild with `npm run build` (or explicitly set `VITE_BASE_PATH=/`) to generate root-relative asset URLs, or clear the `VITE_BASE_PATH` repository variable so the GitHub Actions workflow builds with the correct base path. Conversely, if assets fail to load when hosting at the repository sub-path, set `VITE_BASE_PATH=/joris-party-planner-online/` locally and in the repository variables before rebuilding.
 
 ## Updating the Portfolio Section
 

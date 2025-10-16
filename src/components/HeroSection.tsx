@@ -2,14 +2,16 @@
 import React from 'react';
 
 const HeroSection = () => {
+  const basePath = import.meta.env.BASE_URL;
+
   return (
     <section id="hero" className="relative h-screen flex items-center">
       {/* Background Image with improved overlay */}
       <div className="absolute inset-0 z-0">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url('/images/summer-bbq.png')",
+          style={{
+            backgroundImage: `url('${basePath}images/summer-bbq.png')`,
           }}
         />
         {/* Improved overlay for better text contrast */}

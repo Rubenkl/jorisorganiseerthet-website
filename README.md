@@ -63,62 +63,6 @@ The website focuses on private events:
 - **Homepage Background**: summer-bbq.png - A vibrant summer BBQ scene with string lights
 - **Logo**: joris-logo.png - The official Joris Organiseert Het logo
 
-## How to Add a New Portfolio Item
-
-To add a new portfolio item to the existing portfolio section:
-
-1. Open `src/components/PortfolioSection.tsx`
-2. Find the `portfolioItems` array
-3. Add a new object to the array with the following structure:
-```js
-{
-  title: "Your New Portfolio Item Title",
-  description: "Description of the event or service provided",
-  image: "/images/your-new-image.jpg" // Make sure to add the image to the images folder
-}
-```
-
-## How to Create a Dedicated Portfolio Page
-
-If you want to create a dedicated page for portfolio items with more details:
-
-1. Create a new file in `src/pages/Portfolio.tsx`
-2. Import the necessary components and create a portfolio page layout
-3. Add the route to `src/App.tsx` by adding a new `<Route>` element
-4. Add navigation links to the new page in the Navbar component
-
-Example Portfolio page implementation:
-
-```jsx
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import FooterSection from '@/components/FooterSection';
-import FloatingButtons from '@/components/FloatingButtons';
-
-const Portfolio = () => {
-  // Portfolio items with more details
-  const detailedPortfolioItems = [
-    // Add detailed portfolio items here
-  ];
-
-  return (
-    <div className="min-h-screen">
-      <Navbar />
-      <section className="pt-32 pb-16 bg-joris-cream">
-        <div className="container">
-          <h1 className="text-3xl md:text-4xl font-semibold text-joris-teal mb-8">Portfolio</h1>
-          {/* Portfolio items layout */}
-        </div>
-      </section>
-      <FooterSection />
-      <FloatingButtons />
-    </div>
-  );
-};
-
-export default Portfolio;
-```
-
 ## Project URL
 
 **URL**: https://lovable.dev/projects/ca0e7222-0ac3-41a0-a788-08bbed4dba6b
@@ -140,6 +84,44 @@ npm i
 # Start the development server
 npm run dev
 ```
+
+## GitHub Pages Compatibility & Deployment
+
+This project is configured to be deployed as a static single-page application on GitHub Pages. The following adjustments ensure smooth hosting:
+
+- **Base path awareness** – `vite.config.ts`, the React router, and every static image reference rely on `import.meta.env.BASE_URL`. During local development the base is `/`, while production builds default to `/joris-party-planner-online/`. You can override the production base by setting the `VITE_BASE_PATH` environment variable when building.
+- **Static asset paths** – All components now build their image URLs from `import.meta.env.BASE_URL`, so assets resolve correctly whether the site is hosted at the root domain or under a repository sub-path.
+- **SPA fallback page** – After every build a `404.html` copy of the generated `index.html` is created automatically (see `scripts/create-404.js`). GitHub Pages serves this file for unknown routes, allowing React Router to hydrate the correct view.
+- **Automatic deployment** – The workflow defined in `.github/workflows/deploy.yml` builds the project, sets the correct base path using the repository name, uploads the `dist` folder as an artifact, and publishes it with `actions/deploy-pages`.
+
+### Triggering a Deployment
+
+1. Push to the `main` branch (or trigger the workflow manually via the GitHub UI).
+2. GitHub Actions will execute the **Deploy static site to GitHub Pages** workflow.
+3. The workflow runs `npm ci`, `npm run build`, copies `dist/index.html` to `dist/404.html`, and publishes the result to the GitHub Pages environment.
+4. Once the workflow succeeds, GitHub Pages serves the site from `https://<your-username>.github.io/joris-party-planner-online/` by default.
+
+### Manual Build & Preview
+
+```sh
+# Build with the default GitHub Pages base path
+npm run build
+
+# Serve the production build locally
+npm run preview
+
+# Build for a custom base path (e.g. custom domain)
+VITE_BASE_PATH=/ npm run build
+```
+
+## Updating the Portfolio Section
+
+`src/components/PortfolioSection.tsx` exposes two data structures:
+
+- `packageItems` – the list of arrangement cards rendered at the top of the section. Add, remove, or edit objects in this array to change the textual content.
+- `activityImages` – an array with the image filenames displayed beneath the packages. Add more entries that point to files in `public/images/` using the pattern ```${import.meta.env.BASE_URL}images/<your-image>```.
+
+When adding new images, place the optimized files in `public/images/` to keep deployment simple.
 
 ## Technologies Used
 

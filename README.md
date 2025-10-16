@@ -89,29 +89,29 @@ npm run dev
 
 This project is configured to be deployed as a static single-page application on GitHub Pages. The following adjustments ensure smooth hosting:
 
-- **Base path awareness** – `vite.config.ts`, the React router, and every static image reference rely on `import.meta.env.BASE_URL`. During local development the base is `/`, while production builds default to `/joris-party-planner-online/`. You can override the production base by setting the `VITE_BASE_PATH` environment variable when building.
+- **Base path awareness** – `vite.config.ts`, the React router, and every static image reference rely on `import.meta.env.BASE_URL`. During local development the base is `/`, while production builds now default to the site root (`/`). You can still override the production base by setting the `VITE_BASE_PATH` environment variable when building (e.g. for previewing under a subdirectory).
 - **Static asset paths** – All components now build their image URLs from `import.meta.env.BASE_URL`, so assets resolve correctly whether the site is hosted at the root domain or under a repository sub-path.
 - **SPA fallback page** – After every build a `404.html` copy of the generated `index.html` is created automatically (see `scripts/create-404.js`). GitHub Pages serves this file for unknown routes, allowing React Router to hydrate the correct view.
-- **Automatic deployment** – The workflow defined in `.github/workflows/deploy.yml` builds the project, sets the correct base path using the repository name, uploads the `dist` folder as an artifact, and publishes it with `actions/deploy-pages`.
+- **Automatic deployment** – The workflow defined in `.github/workflows/deploy.yml` builds the project with a root-relative base path, uploads the `dist` folder as an artifact, and publishes it with `actions/deploy-pages`.
 
 ### Triggering a Deployment
 
 1. Push to the `main` branch (or trigger the workflow manually via the GitHub UI).
 2. GitHub Actions will execute the **Deploy static site to GitHub Pages** workflow.
 3. The workflow runs `npm ci`, `npm run build`, copies `dist/index.html` to `dist/404.html`, and publishes the result to the GitHub Pages environment.
-4. Once the workflow succeeds, GitHub Pages serves the site from `https://<your-username>.github.io/joris-party-planner-online/` by default.
+4. Once the workflow succeeds, GitHub Pages serves the site from `https://<your-username>.github.io/` by default (or the custom domain you have configured).
 
 ### Manual Build & Preview
 
 ```sh
-# Build with the default GitHub Pages base path
+# Build with the default root-relative base path
 npm run build
 
 # Serve the production build locally
 npm run preview
 
-# Build for a custom base path (e.g. custom domain)
-VITE_BASE_PATH=/ npm run build
+# Build for a custom base path (e.g. to test a subdirectory deploy)
+VITE_BASE_PATH=/preview/ npm run build
 ```
 
 ## Updating the Portfolio Section

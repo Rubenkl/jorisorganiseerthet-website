@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const fallbackBase = "/joris-party-planner-online/";
+  const fallbackBase = "/";
   const base = process.env.VITE_BASE_PATH ?? (mode === "development" ? "/" : fallbackBase);
 
   return {

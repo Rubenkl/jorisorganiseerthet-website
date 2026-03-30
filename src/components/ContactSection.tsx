@@ -152,7 +152,7 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block mb-2 font-semibold text-joris-teal">Groep/Team</label>
+                   <label htmlFor="company" className="block mb-2 font-semibold text-joris-teal">Bedrijf / Groep</label>
                   <input 
                     type="text" 
                     id="company"
@@ -160,7 +160,7 @@ const ContactSection = () => {
                     value={formData.company}
                     onChange={handleInputChange}
                     className="w-full p-4 border-2 border-joris-yellow/30 rounded-xl focus:border-joris-orange outline-none transition-colors"
-                    placeholder="Je vriendengroep of team"
+                    placeholder="Je bedrijf of groep"
                   />
                 </div>
               </div>

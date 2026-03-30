@@ -21,7 +21,8 @@ const FooterSection = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="#hero" className="hover:text-joris-orange transition-colors">Home</a></li>
               <li><a href="#wat-ik-doe" className="hover:text-joris-orange transition-colors">Wat ik doe!</a></li>
-              <li><a href="#portfolio" className="hover:text-joris-orange transition-colors">Arrangementen</a></li>
+              <li><a href="#bedrijven" className="hover:text-joris-orange transition-colors">Bedrijven</a></li>
+              <li><a href="#particulieren" className="hover:text-joris-orange transition-colors">Particulieren</a></li>
               <li><a href="#testimonials" className="hover:text-joris-orange transition-colors">Reviews</a></li>
               <li><a href="#contact" className="hover:text-joris-orange transition-colors">Contact</a></li>
             </ul>

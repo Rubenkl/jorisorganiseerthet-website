@@ -188,7 +188,7 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   className="w-full p-4 border-2 border-joris-yellow/30 rounded-xl focus:border-joris-orange outline-none transition-colors"
-                  placeholder="Vertel me meer over je plannen! Vriendendag? Vrijgezellenfeest? Familie-uitje? Ik hoor het graag! 🎉"
+                  placeholder="Vertel me meer over je plannen! Bedrijfsuitje? Personeelsfeest? Privé-evenement? Ik hoor het graag! 🎉"
                   required
                 ></textarea>
               </div>

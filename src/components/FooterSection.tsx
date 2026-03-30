@@ -12,7 +12,7 @@ const FooterSection = () => {
           <div>
             <img src={logoSrc} alt="Joris Organiseert Het" className="h-12 mb-4" />
             <p className="text-sm opacity-80">
-              Geen poespas, gewoon een onmeunig mooie dag. Alles op maat voor vriendenfeesten, vrijgezellenfeesten, familie-uitjes, bedrijfsuitjes en alle andere groepen die samen iets leuks willen beleven.
+              Geen poespas, gewoon een onmeunig mooie dag. Alles op maat voor bedrijfsuitjes, personeelsfeesten en privé-evenementen.
             </p>
           </div>
           
@@ -21,7 +21,8 @@ const FooterSection = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="#hero" className="hover:text-joris-orange transition-colors">Home</a></li>
               <li><a href="#wat-ik-doe" className="hover:text-joris-orange transition-colors">Wat ik doe!</a></li>
-              <li><a href="#portfolio" className="hover:text-joris-orange transition-colors">Arrangementen</a></li>
+              <li><a href="#bedrijven" className="hover:text-joris-orange transition-colors">Bedrijven</a></li>
+              <li><a href="#particulieren" className="hover:text-joris-orange transition-colors">Particulieren</a></li>
               <li><a href="#testimonials" className="hover:text-joris-orange transition-colors">Reviews</a></li>
               <li><a href="#contact" className="hover:text-joris-orange transition-colors">Contact</a></li>
             </ul>

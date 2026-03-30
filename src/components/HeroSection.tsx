@@ -32,9 +32,9 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             <span className="text-joris-yellow">Joris Organiseert Het!</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-4 font-medium">
-            Vriendenfeesten • Vrijgezellenfeesten • Familie-uitjes
-          </p>
+            <p className="text-xl md:text-2xl mb-4 font-medium">
+              Bedrijfsuitjes • Personeelsfeesten • Privé-evenementen
+            </p>
           <p className="text-lg md:text-xl mb-8 opacity-90">
             Geen poespas, gewoon een <span className="text-joris-yellow font-semibold">onmeunig mooie dag</span>. Alles op maat!
           </p>

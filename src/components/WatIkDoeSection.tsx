@@ -31,18 +31,20 @@ const WatIkDoeSection = () => {
             {/* Personal story */}
             <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
               <p>
-                Ik regel graag dingen. Plannen, organiseren, zorgen dat alles soepel loopt, daar word ik blij van. 
-                Voor families, vriendengroepen, sportteams, collega's en alle andere gezellige clubjes die samen iets leuks willen beleven.
-                Of het nu gaat om een dagje uit, een feestavond of een vrijgezellenfeest dat nog lang wordt besproken aan een dag of avond om nooit te vergeten. 
-                Geen stress en geen geregel.
+                Ik regel graag dingen. Plannen, organiseren, zorgen dat alles soepel loopt — daar word ik blij van. 
+                Voor bedrijven die geen tijd hebben om zelf een personeelsuitje te regelen, maar ook voor vriendengroepen, 
+                families en alle andere gezellige clubjes die samen iets leuks willen beleven.
               </p>
               
               <p>
-                Want eerlijk is eerlijk: mensen vinden het heerlijk als alles geregeld is. Geen gezeur over "Wat gaan we nu doen?" of "Waar kunnen we eigenlijk heen?" want ik regel het. Van A tot Z. Geen poespas, gewoon een onmeunig mooie dag. Alles op maat.
+                Vooral kleine bedrijven merken dat ze elk jaar weer voor dezelfde uitdaging staan: het team verdient een 
+                goed uitje, maar wie heeft er tijd om dat te organiseren? Precies — daar kom ik om de hoek kijken. 
+                Ik neem het helemaal uit handen. Van A tot Z. Geen poespas, gewoon een onmeunig mooie dag. Alles op maat.
               </p>
               
               <p>
-                Jullie hoeven alleen maar te komen en te genieten. Ik zorg dat het soepel verloopt, dat iedereen lacht, en dat je achteraf denkt: "Dit moeten we vaker doen." Dat is wat ik doe.
+                Jullie hoeven alleen maar te komen en te genieten. Ik zorg dat het soepel verloopt, dat iedereen lacht, 
+                en dat je achteraf denkt: "Dit moeten we vaker doen." Dat is wat ik doe.
               </p>
             </div>
             
